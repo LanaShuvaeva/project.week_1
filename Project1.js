@@ -41,21 +41,6 @@ console.log(listBoards(hello));
 // createBoard(boardName);
 //
 
-
-// ////////////////////////////////////////////////////////
-// function createBoard(boardName) {
-//
-//   if (boardName === 'Dreams' || boardName ===  'Tester Board' ) { //Object.keys(hello))
-//   console.log('Board already exists');
-//   } else {
-//   console.log(`Board "${boardName}" was created!`);
-//   hello[boardName] = '';
-//   }
-// return boardName;
-// }
-// createBoard(boardName);
-///////////////////////////////////////////////////////////
-
 // Function displays default boards + new boards
 
 function listBoardsNew(obj) {
@@ -115,3 +100,33 @@ function displayBoard(boardName) {
 }
 
 displayBoard(boardName);
+
+// Function that creates list
+
+function createList(boardName, listName) {
+  let boardList = Object.getOwnPropertyNames(hello);
+   if (!boardList.includes(boardName)){ //Object.keys(hello))
+     hello[boardName] = {}
+   console.log(`Board "${boardName}" was created!`);
+   } else {
+   console.log('Board already exists');
+   }
+ return boardName;
+ }
+ createBoard(boardName);
+}
+
+// let boardName = 'School';
+//
+// // Function creates new boards
+// function createBoard(boardName) {
+// let boardList = Object.getOwnPropertyNames(hello);
+//   if (!boardList.includes(boardName)){ //Object.keys(hello))
+//     hello[boardName] = {}
+//   console.log(`Board "${boardName}" was created!`);
+//   } else {
+//   console.log('Board already exists');
+//   }
+// return boardName;
+// }
+// createBoard(boardName);
