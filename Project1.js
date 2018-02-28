@@ -94,7 +94,7 @@ return boardName;
 //////////////////////////////////
 
 // Display Board function
-let boardName = 'Tester Board';
+let boardName = 'Dreams';
 
 function displayBoard(boardName) {
   let boardList = Object.getOwnPropertyNames(hello);
@@ -102,11 +102,10 @@ function displayBoard(boardName) {
     if (boardList.includes(boardName)){
       // console.log(hello[boardName]);
       for (let board in hello[boardName]) {
-        let newBoard = "\n----------------------\n";
-        console.log(`${newBoard} ${board} ${newBoard}`);
-        for(let i=0; i<hello[boardName][board].length; i++) {
-
-          console.log(hello[boardName][board][i]);
+        let newBoard = "\n|----------------------\n";
+        console.log(`${newBoard}|  ${board} ${newBoard}`);
+        for (let i=0; i < hello[boardName][board].length; i++) {
+          console.log(`|> ${hello[boardName][board][i]}`);
         }
       }
     } else {
@@ -116,12 +115,3 @@ function displayBoard(boardName) {
 }
 
 displayBoard(boardName);
-
-// ///////////////////////////////////////////
-// let newBoard = "----------------------\n";
-// let count = 0;
-// for (let o in obj) {
-//   count++;
-//   newBoard += `${count} - ${o}\n----------------------\n`;
-//
-//   //////////////////////////////////////////////
