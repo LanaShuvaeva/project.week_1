@@ -43,65 +43,64 @@ console.log(listBoards(hello));
 
 // Function displays default boards + new boards
 
-function listBoardsNew(obj) {
-  let newBoard = "----------------------\n";
-  let count = 0;
-  for (let o in obj) {
-    count++;
-    newBoard += `${count} - ${o}\n----------------------\n`
-  }
-return newBoard;
-}
-console.log(listBoardsNew(hello));
+// function listBoardsNew(obj) {
+//   let newBoard = "----------------------\n";
+//   let count = 0;
+//   for (let o in obj) {
+//     count++;
+//     newBoard += `${count} - ${o}\n----------------------\n`
+//   }
+// return newBoard;
+// }
+// console.log(listBoardsNew(hello));
 
 //Function that removes board
 
 //let boardName = 'Dreams';
-
-function removeBoard(boardName) {
-let boardList = Object.getOwnPropertyNames(hello);
-//console.log(`----------${boardList}--------------`);
-  if (boardList.includes(boardName)){ //Object.keys(hello))
-    delete hello[boardName]; //delete hello[key];
-  console.log(`Board "${boardName}" was deleted!`);
-
-  } else {
-  console.log('Board doesn\'t exist');
-  }
-return boardName;
-  }
+//
+// function removeBoard(boardName) {
+// let boardList = Object.getOwnPropertyNames(hello);
+// //console.log(`----------${boardList}--------------`);
+//   if (boardList.includes(boardName)){ //Object.keys(hello))
+//     delete hello[boardName]; //delete hello[key];
+//   console.log(`Board "${boardName}" was deleted!`);
+//
+//   } else {
+//   console.log('Board doesn\'t exist');
+//   }
+// return boardName;
+//   }
 //
 //
 // removeBoard(boardName);
-//////////////////////////////////
-//console.log(hello.dreams);
-//console.log(Object.keys(hello));
-//////////////////////////////////
+
 
 // Display Board function
-let boardName = 'Dreams';
-
-function displayBoard(boardName) {
-  let boardList = Object.getOwnPropertyNames(hello);
-  let list = Object.entries(hello[boardName]);
-    if (boardList.includes(boardName)){
-      // console.log(hello[boardName]);
-      for (let board in hello[boardName]) {
-        let newBoard = "\n|----------------------\n";
-        console.log(`${newBoard}|  ${board} ${newBoard}`);
-        for (let i=0; i < hello[boardName][board].length; i++) {
-          console.log(`|> ${hello[boardName][board][i]}`);
-        }
-      }
-    } else {
-    console.log('Board doesn\'t exist');
-    }
-  return boardName;
-}
-
-displayBoard(boardName);
+// let boardName = 'Dreams';
+//
+// function displayBoard(boardName) {
+//   let boardList = Object.getOwnPropertyNames(hello);
+//   let list = Object.entries(hello[boardName]);
+//     if (boardList.includes(boardName)){
+//       // console.log(hello[boardName]);
+//       for (let board in hello[boardName]) {
+//         let newBoard = "\n|----------------------\n";
+//         console.log(`${newBoard}|  ${board} ${newBoard}`);
+//         for (let i=0; i < hello[boardName][board].length; i++) {
+//           console.log(`|> ${hello[boardName][board][i]}`);
+//         }
+//       }
+//     } else {
+//     console.log('Board doesn\'t exist');
+//     }
+//   return boardName;
+// }
+//
+// displayBoard(boardName);
 
 // Function that creates list
+let boardName = '';
+let listName = '';
 
 function createList(boardName, listName) {
   let boardList = Object.getOwnPropertyNames(hello);
@@ -113,8 +112,8 @@ function createList(boardName, listName) {
    }
  return boardName;
  }
- createBoard(boardName);
-}
+ createList(boardName, listName);
+
 
 // let boardName = 'School';
 //
