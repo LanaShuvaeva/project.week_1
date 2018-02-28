@@ -75,8 +75,9 @@ let boardName = 'Dreams';
 
 function removeBoard(boardName) {
 let boardList = Object.getOwnPropertyNames(hello);
+//console.log(`----------${boardList}--------------`);
   if (boardList.includes(boardName)){ //Object.keys(hello))
-    delete hello['boardName'];
+    delete hello[boardName]; //delete hello[key];
   console.log(`Board "${boardName}" was deleted!`);
   } else {
   console.log('Board doesn\'t exist');
@@ -86,7 +87,13 @@ return boardName;
 
 
 removeBoard(boardName);
+//////////////////////////////////
 //console.log(hello.dreams);
 //console.log(Object.keys(hello));
+//////////////////////////////////
 
-////////////////////
+// Display Board function
+
+function displayBoard(boardName) {
+
+}
