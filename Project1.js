@@ -24,25 +24,25 @@ return newBoard;
 console.log(listBoards(hello));
 
 
+//
+// let boardName = 'School';
+//
+// // Function creates new boards
+// function createBoard(boardName) {
+// let boardList = Object.getOwnPropertyNames(hello);
+//   if (!boardList.includes(boardName)){ //Object.keys(hello))
+//     hello[boardName] = {}
+//   console.log(`Board "${boardName}" was created!`);
+//   } else {
+//   console.log('Board already exists');
+//   }
+// return boardName;
+// }
+// createBoard(boardName);
+//
 
-let boardName = 'School';
 
-// Function creates new boards
-function createBoard(boardName) {
-let boardList = Object.getOwnPropertyNames(hello);
-  if (!boardList.includes(boardName)){ //Object.keys(hello))
-    hello[boardName] = {}
-  console.log(`Board "${boardName}" was created!`);
-  } else {
-  console.log('Board already exists');
-  }
-return boardName;
-}
-createBoard(boardName);
-
-
-
-// /////////////////////////
+// ////////////////////////////////////////////////////////
 // function createBoard(boardName) {
 //
 //   if (boardName === 'Dreams' || boardName ===  'Tester Board' ) { //Object.keys(hello))
@@ -54,8 +54,9 @@ createBoard(boardName);
 // return boardName;
 // }
 // createBoard(boardName);
+///////////////////////////////////////////////////////////
 
-// Function display default boards + new boards
+// Function displays default boards + new boards
 
 function listBoardsNew(obj) {
   let newBoard = "----------------------\n";
@@ -67,3 +68,25 @@ function listBoardsNew(obj) {
 return newBoard;
 }
 console.log(listBoardsNew(hello));
+
+// Function that removes board
+
+let boardName = 'Dreams';
+
+function removeBoard(boardName) {
+let boardList = Object.getOwnPropertyNames(hello);
+  if (boardList.includes(boardName)){ //Object.keys(hello))
+    delete hello['boardName'];
+  console.log(`Board "${boardName}" was deleted!`);
+  } else {
+  console.log('Board doesn\'t exist');
+  }
+return boardName;
+  }
+
+
+removeBoard(boardName);
+//console.log(hello.dreams);
+//console.log(Object.keys(hello));
+
+////////////////////
