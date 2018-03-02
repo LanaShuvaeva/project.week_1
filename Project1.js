@@ -99,46 +99,63 @@ console.log(listBoards(hello));
 // displayBoard(boardName);
 
 // Function that creates list
+// function createList(boardName, listName) {
+//   let boardList = Object.getOwnPropertyNames(hello);
+// if (boardList.includes(boardName)) {
+//   let boardListOfBoard = Object.getOwnPropertyNames(hello[boardName]);
+//   if (!boardListOfBoard.includes(listName)) {
+//     hello[boardName][listName] = {};
+//     console.log(`Board list "${listName}" for "${boardName}" was created!`);
+//   } else {
+//   console.log('List already exists!');
+//   }
+// } else {
+//   console.log('Board doesn\'t exist!');
+// }
+// }
+//
+//  createList("Tester Board", "To Do");
 
-
-
-
-function createList(boardName, listName) {
-  let boardList = Object.getOwnPropertyNames(hello);
+ // // Function that creates Cards
+ function createCard(boardName, listName, cardName) {
+ let boardList = Object.getOwnPropertyNames(hello);
 if (boardList.includes(boardName)) {
   let boardListOfBoard = Object.getOwnPropertyNames(hello[boardName]);
-  if (!boardListOfBoard.includes(listName)) {
-    hello[boardName][listName] = {};
-    console.log(`Board list "${listName}" for "${boardName}" was created!`);
-  } else {
-  console.log('List already exists!');
-  }
-} else {
-  console.log('Board doesn\'t exist!');
-}
-}
+    if(boardListOfBoard.includes(listName)) {
+     let listCard = Object.getOwnPropertyNames(hello[boardName][listName]);
+      if (!listCard.includes(cardName)) {
+      hello[boardName][listName][cardName] = {};
+      console.log(`You just created "${cardName}" card in your "${listName}" list of "${boardName}" board!`);
 
- createList("Tester Board", "To Do");
-
- // Function that creates Cards
- function createCard(boardName, listName, cardName) {
-   let boardList = Object.getOwnPropertyNames(hello);
-  if (boardList.includes(boardName)) {
-    let boardListOfBoard = Object.getOwnPropertyNames(hello[boardName]);
-      if(boardListOfBoard.includes(listName)) {
-       let listCard = Object.getOwnPropertyNames(hello[boardName][listName]);
-        if (!listCard.includes(cardName)) {
-        hello[boardName][listName][cardName] = {};
-        console.log(`You just created ${cardName} card in your ${listName} list of ${boardName} board!`);
-       } else {
-       console.log('Card already exists!');
-      } else {
-      console.log("List doesn\'t exist!");
-     } else {
-     console.log("Board doesn\'t exist!");
+   }else {
+     console.log('Card already exists!');
     }
+  }else {
+    console.log("List doesn\'t exist!");
    }
+ } else {
+   console.log("Board doesn\'t exist!");
   }
  }
+ 
+createCard("Tester Board", "To Do", "Make lunch");
 
- createCard("Tester Board", "To Do", "Make lunch");
+
+ // Remove List Function
+ // function removeList(boardName, listName) {
+ //   let boardList = Object.getOwnPropertyNames(hello);
+ //     if (boardList.includes(boardName)){
+ //       if(boardListOfBoard.includes(listName)) {
+ //       delete hello[boardName][listName];
+ //        console.log(`Your ${listName} was removed from ${boardName}!`);
+ //       } else {
+ //       console.log('Board doesn\'t exist');
+ //      }
+ //    } else {
+ //      console.log('List doesn\'t exist');
+ //     }
+ //   return boardName, listName;
+ //     }
+ // }
+ //
+ // removeList("Dreams", "Wish List");
