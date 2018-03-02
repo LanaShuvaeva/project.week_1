@@ -161,6 +161,7 @@ console.log(listBoards(hello));
 // removeList("Dreams", "Wish List");
 
 //Remove Card Function
+
 function removeCard(boardName, listName, cardName) {
 
  let boardList = Object.getOwnPropertyNames(hello);
@@ -169,7 +170,8 @@ if (boardList.includes(boardName)) {
     if(boardListOfBoard.includes(listName)) {
      let listCard = JSON.stringify(hello[boardName][listName]);
       if (listCard.includes(cardName)) {
-      delete hello[boardName][listName][cardName];
+          let i = hello[boardName][listName].indexOf(cardName);
+        hello[boardName][listName].splice(i , 1);
       console.log(`You just deleted "${cardName}" card in your "${listName}" list of "${boardName}" board!`);
 
    } else {
@@ -183,4 +185,4 @@ if (boardList.includes(boardName)) {
   }
  }
 
-removeCard("Tester Board", "To Do", 'Laundry');
+removeCard("Tester Board", "To Do", "Pay Phone Bill");
