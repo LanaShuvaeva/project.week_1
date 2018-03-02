@@ -122,7 +122,7 @@ console.log(listBoards(hello));
 // if (boardList.includes(boardName)) {
 //   let boardListOfBoard = Object.getOwnPropertyNames(hello[boardName]);
 //     if(boardListOfBoard.includes(listName)) {
-//      let listCard = Object.getOwnPropertyNames(hello[boardName][listName]);
+//      let listCard = JSON.stringify(hello[boardName][listName]);
 //       if (!listCard.includes(cardName)) {
 //       hello[boardName][listName][cardName] = {};
 //       console.log(`You just created "${cardName}" card in your "${listName}" list of "${boardName}" board!`);
@@ -138,25 +138,49 @@ console.log(listBoards(hello));
 //   }
 //  }
 //
-// createCard("Tester Board", "To Do", "Make lunch");
+// createCard("Tester Board", "To Do", "Laundry");
 
 
  // Remove List Function
- function removeList(boardName, listName) {
-  let boardList = Object.getOwnPropertyNames(hello);
-    if (boardList.includes(boardName)){
-      let boardListOfBoard = Object.getOwnPropertyNames(hello[boardName]);
-      if(boardListOfBoard.includes(listName)) {
-      delete hello[boardName][listName];
-       console.log(`Your ${listName} was removed from ${boardName}!`);
-      } else {
-      console.log('List doesn\'t exist');
-     }
+//  function removeList(boardName, listName) {
+//   let boardList = Object.getOwnPropertyNames(hello);
+//     if (boardList.includes(boardName)){
+//       let boardListOfBoard = Object.getOwnPropertyNames(hello[boardName]);
+//       if(boardListOfBoard.includes(listName)) {
+//       delete hello[boardName][listName];
+//        console.log(`Your ""${listName}" was removed from "${boardName}"!`);
+//       } else {
+//       console.log('List doesn\'t exist');
+//      }
+//    } else {
+//      console.log('Board doesn\'t exist');
+//     }
+//   return boardName, listName;
+//     }
+//
+// removeList("Dreams", "Wish List");
+
+//Remove Card Function
+function removeCard(boardName, listName, cardName) {
+
+ let boardList = Object.getOwnPropertyNames(hello);
+if (boardList.includes(boardName)) {
+  let boardListOfBoard = Object.getOwnPropertyNames(hello[boardName]);
+    if(boardListOfBoard.includes(listName)) {
+     let listCard = JSON.stringify(hello[boardName][listName]);
+      if (listCard.includes(cardName)) {
+      delete hello[boardName][listName][cardName];
+      console.log(`You just deleted "${cardName}" card in your "${listName}" list of "${boardName}" board!`);
+
    } else {
-     console.log('Board doesn\'t exist');
+     console.log('Card doesn\'t exist!');
     }
-  return boardName, listName;
-    }
+  } else {
+    console.log("List doesn\'t exist!");
+   }
+ } else {
+   console.log("Board doesn\'t exist!");
+  }
+ }
 
-
-removeList("Dreams", "Wish List");
+removeCard("Tester Board", "To Do", 'Laundry');
