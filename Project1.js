@@ -39,7 +39,7 @@ console.log(listBoards(hello));
 // return boardName;
 // }
 // createBoard(boardName);
-//
+
 
 // Function displays default boards + new boards
 
@@ -56,7 +56,7 @@ console.log(listBoards(hello));
 
 //Function that removes board
 
-//let boardName = 'Dreams';
+// let boardName = 'Dreams';
 //
 // function removeBoard(boardName) {
 // let boardList = Object.getOwnPropertyNames(hello);
@@ -100,21 +100,45 @@ console.log(listBoards(hello));
 
 // Function that creates list
 
-//let listName = Object.entries(hello[boardName]);
+
+
 
 function createList(boardName, listName) {
   let boardList = Object.getOwnPropertyNames(hello);
 if (boardList.includes(boardName)) {
-  boardListOfBoard = Object.getOwnPropertyNames(hello[boardName]);
-  // console.log(hello[boardName]);
-  if(!boardListOfBoard.includes(listName)) {
+  let boardListOfBoard = Object.getOwnPropertyNames(hello[boardName]);
+  if (!boardListOfBoard.includes(listName)) {
     hello[boardName][listName] = {};
     console.log(`Board list "${listName}" for "${boardName}" was created!`);
   } else {
-  console.log('Board list already exists');
+  console.log('List already exists!');
   }
+} else {
+  console.log('Board doesn\'t exist!');
+}
 }
 
-}
+ createList("Tester Board", "To Do");
 
- createList("Dreams", "lana");
+ // Function that creates Cards
+ function createCard(boardName, listName, cardName) {
+   let boardList = Object.getOwnPropertyNames(hello);
+  if (boardList.includes(boardName)) {
+    let boardListOfBoard = Object.getOwnPropertyNames(hello[boardName]);
+      if(boardListOfBoard.includes(listName)) {
+       let listCard = Object.getOwnPropertyNames(hello[boardName][listName]);
+        if (!listCard.includes(cardName)) {
+        hello[boardName][listName][cardName] = {};
+        console.log(`You just created ${cardName} card in your ${listName} list of ${boardName} board!`);
+       } else {
+       console.log('Card already exists!');
+      } else {
+      console.log("List doesn\'t exist!");
+     } else {
+     console.log("Board doesn\'t exist!");
+    }
+   }
+  }
+ }
+
+ createCard("Tester Board", "To Do", "Make lunch");
