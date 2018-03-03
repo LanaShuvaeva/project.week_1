@@ -162,27 +162,60 @@ console.log(listBoards(hello));
 
 //Remove Card Function
 
-function removeCard(boardName, listName, cardName) {
+// function removeCard(boardName, listName, cardName) {
+//
+//  let boardList = Object.getOwnPropertyNames(hello);
+// if (boardList.includes(boardName)) {
+//   let boardListOfBoard = Object.getOwnPropertyNames(hello[boardName]);
+//     if(boardListOfBoard.includes(listName)) {
+//      let listCard = JSON.stringify(hello[boardName][listName]);
+//       if (listCard.includes(cardName)) {
+//           let i = hello[boardName][listName].indexOf(cardName);
+//         hello[boardName][listName].splice(i , 1);
+//       console.log(`You just deleted "${cardName}" card in your "${listName}" list of "${boardName}" board!`);
+//
+//    } else {
+//      console.log('Card doesn\'t exist!');
+//     }
+//   } else {
+//     console.log("List doesn\'t exist!");
+//    }
+//  } else {
+//    console.log("Board doesn\'t exist!");
+//   }
+//  }
+//
+// removeCard("Tester Board", "To Do", "Pay Phone Bill");
 
- let boardList = Object.getOwnPropertyNames(hello);
-if (boardList.includes(boardName)) {
-  let boardListOfBoard = Object.getOwnPropertyNames(hello[boardName]);
-    if(boardListOfBoard.includes(listName)) {
-     let listCard = JSON.stringify(hello[boardName][listName]);
-      if (listCard.includes(cardName)) {
-          let i = hello[boardName][listName].indexOf(cardName);
-        hello[boardName][listName].splice(i , 1);
-      console.log(`You just deleted "${cardName}" card in your "${listName}" list of "${boardName}" board!`);
+// Move card function
 
+function moveCard (boardName, fromList, toList, fromCardIndex, toCardIndex) {
+  let boardList = Object.getOwnPropertyNames(hello);
+  if (boardList.includes(boardName)) {
+   let boardListOfBoard = Object.getOwnPropertyNames(hello[boardName]);
+     if(boardListOfBoard.includes(fromList)) {
+      let listCard = JSON.stringify(hello[boardName][fromList]);
+       if (listCard.includes(fromCardIndex)) {
+         let listCardTo = JSON.stringify(hello[boardName]);
+         if (listCardTo.includes(toList)) {
+           let i = hello[boardName][fromList].indexOf(fromCardIndex);
+       hello[boardName][fromList].splice(i , 1);
+       hello[boardName][toList][toCardIndex] = {};
+       console.log(`You just moved "${fromCardIndex}" card from "${fromList}" list to "${toList}" list!`);
+     } else {
+       console.log("List doesn\'t exist!");
+     }
+    } else {
+      console.log('Card doesn\'t exist!');
+     }
    } else {
-     console.log('Card doesn\'t exist!');
+     console.log("List doesn\'t exist!");
     }
   } else {
-    console.log("List doesn\'t exist!");
+    console.log("Board doesn\'t exist!");
    }
- } else {
-   console.log("Board doesn\'t exist!");
   }
- }
 
-removeCard("Tester Board", "To Do", "Pay Phone Bill");
+
+
+moveCard ("Tester Board", "To Do", "Done", "Buy Apples", "Buy Apples");
