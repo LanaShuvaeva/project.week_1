@@ -10,6 +10,7 @@ const hello = {
     }
 };
 
+//////////////////////////////////////////////////////////
 // Function lists two default boards
 function listBoards(obj) {
   let newBoard = "----------------------\n";
@@ -24,10 +25,12 @@ return newBoard;
 console.log(listBoards(hello));
 
 
-//
+
+//////////////////////////////////////////////////////////
+// Function creates new boards
+
 // let boardName = 'School';
 //
-// // Function creates new boards
 // function createBoard(boardName) {
 // let boardList = Object.getOwnPropertyNames(hello);
 //   if (!boardList.includes(boardName)){ //Object.keys(hello))
@@ -40,7 +43,7 @@ console.log(listBoards(hello));
 // }
 // createBoard(boardName);
 
-
+//////////////////////////////////////////////////////////
 // Function displays default boards + new boards
 
 // function listBoardsNew(obj) {
@@ -54,6 +57,7 @@ console.log(listBoards(hello));
 // }
 // console.log(listBoardsNew(hello));
 
+//////////////////////////////////////////////////////////
 //Function that removes board
 
 // let boardName = 'Dreams';
@@ -74,8 +78,9 @@ console.log(listBoards(hello));
 //
 // removeBoard(boardName);
 
-
+//////////////////////////////////////////////////////////
 // Display Board function
+
 // let boardName = 'Dreams';
 //
 // function displayBoard(boardName) {
@@ -98,7 +103,9 @@ console.log(listBoards(hello));
 //
 // displayBoard(boardName);
 
+//////////////////////////////////////////////////////////
 // Function that creates list
+
 // function createList(boardName, listName) {
 //   let boardList = Object.getOwnPropertyNames(hello);
 // if (boardList.includes(boardName)) {
@@ -116,7 +123,9 @@ console.log(listBoards(hello));
 //
 //  createList("Tester Board", "To Do");
 
- // // Function that creates Cards
+//////////////////////////////////////////////////////////
+// Function that creates Cards
+
 //  function createCard(boardName, listName, cardName) {
 //  let boardList = Object.getOwnPropertyNames(hello);
 // if (boardList.includes(boardName)) {
@@ -140,8 +149,9 @@ console.log(listBoards(hello));
 //
 // createCard("Tester Board", "To Do", "Laundry");
 
-
+//////////////////////////////////////////////////////////
  // Remove List Function
+
 //  function removeList(boardName, listName) {
 //   let boardList = Object.getOwnPropertyNames(hello);
 //     if (boardList.includes(boardName)){
@@ -160,6 +170,7 @@ console.log(listBoards(hello));
 //
 // removeList("Dreams", "Wish List");
 
+//////////////////////////////////////////////////////////
 //Remove Card Function
 
 // function removeCard(boardName, listName, cardName) {
@@ -187,35 +198,36 @@ console.log(listBoards(hello));
 //
 // removeCard("Tester Board", "To Do", "Pay Phone Bill");
 
+//////////////////////////////////////////////////////////
 // Move card function
 
-function moveCard (boardName, fromList, toList, fromCardIndex, toCardIndex) {
-  let boardList = Object.getOwnPropertyNames(hello);
-  if (boardList.includes(boardName)) {
-   let boardListOfBoard = Object.getOwnPropertyNames(hello[boardName]);
-     if(boardListOfBoard.includes(fromList)) {
-      let listCard = JSON.stringify(hello[boardName][fromList]);
-       if (listCard.includes(fromCardIndex)) {
-         let listCardTo = JSON.stringify(hello[boardName]);
-         if (listCardTo.includes(toList)) {
-           let i = hello[boardName][fromList].indexOf(fromCardIndex);
-       hello[boardName][fromList].splice(i , 1);
-       hello[boardName][toList][toCardIndex] = {};
-       console.log(`You just moved "${fromCardIndex}" card from "${fromList}" list to "${toList}" list!`);
-     } else {
-       console.log("List doesn\'t exist!");
-     }
-    } else {
-      console.log('Card doesn\'t exist!');
-     }
-   } else {
-     console.log("List doesn\'t exist!");
-    }
-  } else {
-    console.log("Board doesn\'t exist!");
-   }
-  }
-
-
-
-moveCard ("Tester Board", "To Do", "Done", "Buy Apples", "Buy Apples");
+// function moveCard (boardName, fromList, toList, fromCardIndex, toCardIndex) {
+//   let boardList = Object.getOwnPropertyNames(hello);
+//   if (boardList.includes(boardName)) {
+//    let boardListOfBoard = Object.getOwnPropertyNames(hello[boardName]);
+//      if(boardListOfBoard.includes(fromList)) {
+//       let listCard = JSON.stringify(hello[boardName][fromList]);
+//        if (listCard.includes(fromCardIndex)) {
+//          let listCardTo = JSON.stringify(hello[boardName]);
+//          if (listCardTo.includes(toList)) {
+//            let i = hello[boardName][fromList].indexOf(fromCardIndex);
+//        hello[boardName][fromList].splice(i , 1);
+//        hello[boardName][toList][toCardIndex] = {};
+//        console.log(`You just moved "${fromCardIndex}" card from "${fromList}" list to "${toList}" list!`);
+//      } else {
+//        console.log("List doesn\'t exist!");
+//      }
+//     } else {
+//       console.log('Card doesn\'t exist!');
+//      }
+//    } else {
+//      console.log("List doesn\'t exist!");
+//     }
+//   } else {
+//     console.log("Board doesn\'t exist!");
+//    }
+//   }
+//
+//
+//
+// moveCard ("Tester Board", "To Do", "Done", "Buy Apples", "Buy Apples");
